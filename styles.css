@@ -16,7 +16,6 @@ button { font: inherit; }
 
 .site-header { height: 76px; padding: 0 6.2vw; display: flex; align-items: center; justify-content: space-between; background: var(--paper); }
 .wordmark { font-size: 12px; font-weight: 700; letter-spacing: 1.3px; }
-.wordmark span { color: var(--muted); font-weight: 400; }
 .site-header nav { display: flex; gap: 36px; align-items: center; font-size: 12px; }
 .site-header nav a { transition: opacity .2s ease; }
 .site-header nav a:hover, .site-footer a:hover { opacity: .62; }
@@ -72,6 +71,10 @@ button { font: inherit; }
 .download-row h2 { font-size: clamp(48px, 6vw, 78px); line-height: 1.02; }
 .download-action { max-width: 380px; padding-bottom: 4px; }
 .download-action > p:first-child { margin: 0 0 24px; color: rgb(255 255 255 / 73%); font-size: 13px; line-height: 1.75; }
+.course-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 22px; margin-top: 52px; }
+.course-item { min-width: 0; padding: 20px 12px 24px; border-top: 1px solid rgb(255 255 255 / 28%); }
+.course-number { margin: 0 0 15px; color: rgb(255 255 255 / 64%); font-size: 9px; font-weight: 700; letter-spacing: 1.3px; }
+.course-name { margin: 0; font: 500 22px/1.25 var(--serif); overflow-wrap: anywhere; }
 .download-button { border: 0; background: var(--paper); color: var(--ink); min-height: 48px; padding: 0 19px; cursor: pointer; font-size: 12px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
 .download-button:hover { background: white; transform: translateY(-2px); }
 .download-button span { margin-left: 24px; font-size: 16px; }
@@ -105,10 +108,17 @@ button { font: inherit; }
   .download-inner { padding: 58px 7vw 62px; }
   .download-row { grid-template-columns: 1fr; gap: 28px; margin-top: 38px; }
   .download-row h2 { font-size: 58px; }
+  .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; margin-top: 38px; }
+  .course-item { padding-right: 6px; padding-left: 6px; }
+  .course-name { font-size: 20px; }
   .site-footer { padding: 22px 7vw; flex-wrap: wrap; }
   .site-footer p { order: 1; width: 100%; margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+@media (max-width: 420px) {
+  .course-grid { grid-template-columns: 1fr; }
 }
